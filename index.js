@@ -1,3 +1,5 @@
+// pry = require('pryjs')
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Contutorialuctor OO pattern?',
@@ -12,5 +14,15 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let newTutorials = tutorials.map( title => {
+    let words = title.split(" ")
+    
+    let titleCase = words.map( word => {
+      return word.replace(word.charAt(0), word[0].toUpperCase())
+    })
+    return titleCase.join(" ")
+  })
+  return newTutorials
 }
+
+// console.log(titleCased())
